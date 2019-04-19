@@ -1,0 +1,19 @@
+<a href="/">Revenir</a>
+<div *ngIf="pokemon">
+<audio autoplay #cry>
+  <source src="/assets/audio/{{pokemon.id}}.mp3" />
+</audio>
+<button (click)='cry.play()'>play sound</button>
+name : {{ pokemon.name }}
+id : {{ pokemon.id }}
+height : {{ pokemon.height }}
+weight : {{ pokemon.weight }}
+<img src="/assets/img/official-artwork/{{pokemon.id}}.png" alt="{{ pokemon.name }}"/>
+
+type:
+  <ul>
+    <li *ngFor="let type of pokemon.types">
+      {{type}}
+    </li>
+  </ul>
+</div>
